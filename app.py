@@ -27,7 +27,7 @@ with col3:
   
 
 st.text('')
-if st.button("Predict Capital Adequecy Ratio (CAR)"):
+if st.button("Predict Capital Adequacy Ratio (CAR)"):
     result = predict(
         np.array([[total_noninterest_expense_reported, 
         total_noninterest_income_reported, 
