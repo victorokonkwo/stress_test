@@ -26,8 +26,8 @@ st.text('')
 
 with col2:
     st.text("capital tier characteristics")
-    capital_tier2 = st.slider('capital_tier2', 0, 100000000000, 100000)
-    total_qualifying_capital = st.slider('total_qualifying_capital', 0, 100000000000, 100000)
+    capital_tier2 = st.slider('Capital Tier2', 0, 100000000000, 100000)
+    total_qualifying_capital = st.slider('Total Qualifying Capital', 0, 100000000000, 100000)
     tier1_to_twra = st.slider('TIER 1 TO TWRA (%)', 0, 100000000000, 100000)
     tier2_to_twra = st.slider('TIER 2 TO TWRA (%)', 0, 100000000000, 100000)
 
