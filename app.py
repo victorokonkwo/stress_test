@@ -12,7 +12,7 @@ st.header("Stress Features")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.text("RWA characteristics")
+    st.text("TRWA characteristics")
     credit_rwa = st.text_input('CREDIT RWA', value='')
     operational_rwa = st.text_input('OPERATIONAL RWA', value='')
     market_rwa = st.text_input('MARKET RWA', value='')
