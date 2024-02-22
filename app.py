@@ -17,7 +17,7 @@ with col1:
     operational_rwa = st.text_input('OPERATIONAL RWA', value='')
     market_rwa = st.text_input('MARKET RWA', value='')
     rwa = st.text_input('TRWA', value='')
-    capital = st.text_input('Capital Tier1', value='')
+
 
 
 
@@ -30,6 +30,7 @@ st.text('')
 
 with col2:
     st.text("Capital Tier Characteristics")
+    capital = st.text_input('Capital Tier1', value='')
     capital_tier2 = st.text_input('Capital Tier2', value='')
     total_qualifying_capital = st.text_input('Total Qualifying Capital', value='')
     tier1_to_twra = st.text_input('TIER 1 TO TWRA (%)', value='')
@@ -52,3 +53,5 @@ if st.button("Predict Capital Adequacy Ratio (CAR)"):
 
 st.text('')
 st.text('')
+
+
