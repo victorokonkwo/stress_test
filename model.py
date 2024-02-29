@@ -48,3 +48,41 @@ model_xgb.fit(X, y)
 
 # save the model to disk
 joblib.dump(model_xgb, "xgb_model.sav")
+
+
+# Income
+data = pd.read_excel('data/Model Testing.xlsx', sheet_name='Income').T
+data = data.drop([0,1,2,3,4], axis=1)
+data = data.drop('Unnamed: 0')
+
+data_income = data.reset_index(drop=True)
+column = list(data_income.columns)
+col_rename = data_income.iloc[0, :].to_dict()
+
+data_income = data_income.rename(columns=col_rename)
+data_income = data_income.drop(0)
+
+data_income.to_csv('data_income.csv', index=False)
+
+for col in data_income.columns:
+    data_income[col] = data_income[col].astype(float)
+
+X = data_income[['30330:Trading income on Foreign Exchange',
+'30210:Interest Expense on Inter-Bank Transactions',
+'30290:Total Fees & Commission Income',
+'30340:Trading income on Fixed Income securities',
+'30150:Income from inter-Bank Transactions',        
+'30260:Commissions',                                      
+'30120:Interest income on Loans',                         
+'30140:Income from Government Securities '
+]]
+
+
+y = data_income['30600:PROFIT/(LOSS) AFTER TAX']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+model_PandL = XGBRegressor(random_state=42)
+model_PandL.fit(X, y)
+
+joblib.dump(model_PandL, "pandl_model.sav")

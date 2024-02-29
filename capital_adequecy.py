@@ -18,11 +18,6 @@ with col1:
     market_rwa = st.text_input('MARKET RWA', value='')
     rwa = st.text_input('TRWA', value='')
 
-
-
-
-
-
 st.text('')
 st.text('')
 st.text('')
@@ -47,7 +42,7 @@ if st.button("Predict Capital Adequacy Ratio (CAR)"):
         float(total_qualifying_capital),
         float(tier1_to_twra),
         float(tier2_to_twra)
-        ]]))
+        ]]),   model="xgb_model.sav")
     
     st.text(f'The Capital Adequacy ratio is {round(result[0], 3)}%')
 
